@@ -1,13 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <!-- <div id="nav"> -->
+      <!-- <router-link to="/">Home</router-link> | -->
+      <!-- <router-link to="/about">About</router-link> -->
+    <!-- </div> -->
+
+    <!-- 导航栏 -->
+    <NavBar></NavBar>
+    
     <router-view/>
   </div>
 </template>
-
+<script>
+// @ is an alias to /src
+// import HelloWorld from '@/components/HelloWorld.vue'
+import NavBar from '@/components/NavBar.vue'
+export default {
+  name: 'App',
+  components: {
+    // HelloWorld
+    NavBar,
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
