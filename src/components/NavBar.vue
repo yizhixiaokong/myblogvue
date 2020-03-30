@@ -4,6 +4,9 @@
   <el-menu-item index="/list">文章列表</el-menu-item>
   
   <el-menu-item index="/about">关于我</el-menu-item>
+
+  <el-menu-item index="/postblog">写博客</el-menu-item>
+  
 </el-menu>
 </template>
 
