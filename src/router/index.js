@@ -1,17 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import PostBlog from '../views/PostBlog.vue'
-import List from '../views/List.vue'
-import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
+import HomeView from '../views/Home.vue'
+import PostBlogView from '../views/PostBlog.vue'
+import ListView from '../views/List.vue'
+import LoginView from '../views/Login.vue'
+import RegisterView from '../views/Register.vue'
 
 Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
         name: 'Home',
-        component: Home
+        component: HomeView
     },
     {
         path: '/about',
@@ -29,7 +29,7 @@ const routes = [{
         // route level code-splitting
         // this generates a separate chunk (postblog.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: PostBlog
+        component: PostBlogView
     },
     {
         path: '/list',
@@ -37,7 +37,7 @@ const routes = [{
         // route level code-splitting
         // this generates a separate chunk (postblog.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: List
+        component: ListView
     },
     {
         path: '/login',
@@ -45,7 +45,7 @@ const routes = [{
         // route level code-splitting
         // this generates a separate chunk (postblog.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: Login
+        component: LoginView
     },
     {
         path: '/register',
@@ -53,7 +53,7 @@ const routes = [{
         // route level code-splitting
         // this generates a separate chunk (postblog.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: Register
+        component: RegisterView
     },
 ]
 

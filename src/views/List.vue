@@ -29,7 +29,7 @@
 <script>
 import * as API from "@/api/blog/";
 export default {
-  name: "List",
+  name: "ListView",
   inject: ["timestampToTime"],
   data() {
     return {

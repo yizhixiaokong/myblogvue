@@ -22,7 +22,7 @@
 <script>
 import * as API from "@/api/user/";
 export default {
-  name: "List",
+  name: "ListView",
   data() {
     return {
       Me: [],

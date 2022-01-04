@@ -34,6 +34,7 @@
 <script>
 import * as API from "@/api/user/";
 export default {
+  name: "LoginView",
   data() {
     return {
       user: {

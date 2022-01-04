@@ -3,14 +3,19 @@
     <h1>文章发布</h1>
     <el-form ref="form" :model="form" label-width="80px">
       <el-form-item label>
-        <el-input v-model="form.title" show-word-limit maxlength="30" placeholder="请输入标题(不超过30字)"></el-input>
+        <el-input
+          v-model="form.title"
+          show-word-limit
+          maxlength="30"
+          placeholder="请输入标题(不超过30字)"
+        ></el-input>
       </el-form-item>
       <el-form-item label>
         <el-input
           type="textarea"
           show-word-limit
           maxlength="2000"
-          :autosize="{ minRows: 4, maxRows: 10}"
+          :autosize="{ minRows: 4, maxRows: 10 }"
           placeholder="请输入内容"
           v-model="form.details"
         ></el-input>
@@ -26,13 +31,13 @@
 <script>
 import * as API from "@/api/blog/";
 export default {
-  name: "PostBlog",
+  name: "PostBlogView",
   data() {
     return {
       form: {
         title: "",
-        details: ""
-      }
+        details: "",
+      },
     };
   },
   methods: {
@@ -40,45 +45,48 @@ export default {
       if (this.form.title == "") {
         this.$notify.error({
           title: "发布失败",
-          message: "标题不能为空"
+          message: "标题不能为空",
         });
       } else if (this.form.details == "") {
         this.$notify.error({
           title: "发布失败",
-          message: "内容不能为空"
+          message: "内容不能为空",
         });
       } else {
         API.postBlog(this.form)
-          .then(res => {
+          .then((res) => {
             if (res.code > 0) {
               this.$notify.error({
                 title: "发布失败",
-                message: res.msg
+                message: res.msg,
               });
             } else {
               this.$notify({
                 title: "发布成功",
                 message: `文章ID：${res.data.id}`,
-                type: "success"
+                type: "success",
               });
-              this.form.title="";
-              this.form.details="";
+              this.form.title = "";
+              this.form.details = "";
               this.$router.push("/list");
             }
           })
-          .catch(error => {
+          .catch((error) => {
             this.$notify.error({
               title: "网络错误",
-              message: error
+              message: error,
             });
           });
       }
 
+      // eslint-disable-next-line no-console
       console.log("submit!");
+      // eslint-disable-next-line no-console
       console.log("title:" + this.form.title);
+      // eslint-disable-next-line no-console
       console.log("details:" + this.form.details);
-    }
-  }
+    },
+  },
 };
 </script>
 

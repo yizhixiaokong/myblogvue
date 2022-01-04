@@ -24,7 +24,7 @@ import * as API from "@/api/blog/";
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 export default {
-  name: "Home",
+  name: "HomeView",
   inject: ["timestampToTime"],
   data() {
     return {
